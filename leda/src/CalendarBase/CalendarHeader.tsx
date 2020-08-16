@@ -15,18 +15,27 @@ export const CalendarHeader = (props: CalendarHeaderProps): React.ReactElement =
       <Span
         className={getClassNames(theme.prevButton, { [theme.buttonDisabled]: conditions.isPrevButtonDisabled })}
         onClick={(ev) => onClick(getButtonActionType(viewType, BUTTON_TYPE.PREV), ev)}
+        role="button"
+        aria-label="Предыдущий месяц"
+        title="Предыдущий месяц"
       >
         <i className={theme.prevIcon} />
       </Span>
       <Span
         className={getClassNames(theme.title, { [theme.titleDisabled]: conditions.isTitleDisabled })}
         onClick={(ev) => onClick(CALENDAR_CLICK_ACTION.TITLE_CLICK, ev)}
+        role="button"
+        aria-label="Выбор месяца"
+        title="Выбор месяца"
       >
         {getCalendarTitle(viewDate, viewType)}
       </Span>
       <Span
         className={getClassNames(theme.nextButton, { [theme.buttonDisabled]: conditions.isNextButtonDisabled })}
         onClick={(ev) => onClick(getButtonActionType(viewType, BUTTON_TYPE.NEXT), ev)}
+        role="button"
+        aria-label="Следующий месяц"
+        title="Следующий месяц"
       >
         <i className={theme.nextIcon} />
       </Span>
